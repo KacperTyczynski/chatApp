@@ -1,0 +1,12 @@
+{
+    "port": "8000",
+
+    "db": {
+        "url":"mongodb://grupowy:rmeCqapGjR85mrUiqOs0FPBlCz5qq4u5YZIeGuuXLuooIrtFXnpIH18Z22Doc4a8xouMtDGVawBEJOcV1fIhpQ%3D%3D@grupowy.mongo.cosmos.azure.com:10255/?ssl=true&retrywrites=false&maxIdleTimeMS=120000&appName=@grupowy@",
+        "name":"node",
+        "collection": "feeds",
+        "Options":{
+            "undefinedTopology": true
+        }
+    }
+}
