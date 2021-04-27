@@ -4,15 +4,24 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node sever",
-    "dev": "nodemon server"
+    "test": "cross-env NODE_ENV=development jest",
+    "start": "cross-env NODE_ENV=production node ./main.js",
+    "start:dev": "cross-env NODE_ENV=development node ./main.js",
+    "start:pro": "npm start",
+    "start:watch": "nodemon cross-env NODE_ENV=development ./main.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "config.json": "^0.0.4",
     "express": "^4.17.1",
+    "express-jwt": "^6.0.0",
+    "jsonwebtoken": "^8.5.1",
     "moment": "^2.29.1",
+    "mongoose": "^5.12.5",
+    "save": "^2.4.0",
     "socket.io": "^4.0.1"
   },
   "devDependencies": {

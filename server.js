@@ -1,8 +1,12 @@
+
 const path = require('path');
 const http = require('http');
 const express = require('express');
 const socketio = require('socket.io');
-const formatMessage = require('./utils/msg');
+const cors = require('cors');
+// const jwt = require('./storage/jwt');
+// const errorHandler = require('./storage/error-handler');
+// const formatMessage = require('./utils/msg');
 const {
   userJoin,
   getCurrentUser,
@@ -12,13 +16,18 @@ const {
 const { maybeGetBannedWordWarningMessage } = require('./chatBot')
 
 const app = express();
+
 const server = http.createServer(app);
 const io = socketio(server);
 
+app.use(express.json());
+// app.use(jwt());
+// app.use('/users', require('./users/users.controller'));
+// app.use(errorHandler);
 // Ustawienie statycznego folderu == Znajduje odwołania w folderze public == tworzy dynamiczny URL
 app.use(express.static(path.join(__dirname, 'public')));
 
-const botName = 'ChatApp Bot';
+const botName = 'ChatApp';
 
 // Kod odpalany gdy podłączają się użytkownicy
 io.on('connection', socket => {

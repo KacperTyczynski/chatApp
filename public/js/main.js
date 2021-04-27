@@ -32,7 +32,6 @@ socket.on('message', (message) => {
 chatForm.addEventListener('submit', (e) => {
   e.preventDefault();
 
-  // "GET MESSAGE TEXT"
   let msg = e.target.elements.msg.value;
 
   msg = msg.trim();
