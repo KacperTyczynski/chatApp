@@ -9,6 +9,7 @@ const {
   userLeave,
   getRoomUsers
 } = require('./utils/users');
+const { maybeGetBannedWordWarningMessage } = require('./chatBot')
 
 const app = express();
 const server = http.createServer(app);
@@ -48,7 +49,10 @@ io.on('connection', socket => {
   socket.on('chatMessage', msg => {
     const user = getCurrentUser(socket.id);
 
-    io.to(user.room).emit('message', formatMessage(user.username, msg));
+    const message = maybeGetBannedWordWarningMessage(user.username, msg, botName)
+        || formatMessage(user.username, msg)
+
+    io.to(user.room).emit('message', message);
   });
 
   //Wiadomość o opuszczeniu chatu
