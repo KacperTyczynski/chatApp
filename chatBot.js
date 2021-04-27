@@ -12,7 +12,8 @@ const flowerNamesWithoutEndings = [
     "różanecznik",
     "piwoni", // piwonia
     "krzewuszk", // krzewuszka
-    "wiśni" // wiśnia
+    "wiśni", // wiśnia
+    "JD" // JD
 ]
 
 function maybeGetBannedWordWarningMessage(userName, msg, botName) {
