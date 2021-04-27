@@ -4,8 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node sever",
-    "dev": "nodemon server"
+    "test": "cross-env NODE_ENV=development jest",
+    "start": "node ./server.js",
+    "start:dev": "cross-env NODE_ENV=development node ./server.js",
+    "start:pro": "cross-env NODE_ENV=production node /server.js",
+    "start:watch": "nodemon cross-env NODE_ENV=development /server.js"
   },
   "keywords": [],
   "author": "",
